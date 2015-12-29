@@ -1,38 +1,56 @@
 # node-js-getting-started
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+一个简单的使用 Express 4 的 Node.js 应用。
+可以运行在 LeanEngine Node.js 运行时环境。
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+## 本地运行
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+首先确认本机已经安装 [Node.js](http://nodejs.org/) 运行环境和 [LeanCloud 命令行工具](https://leancloud.cn/docs/cloud_code_commandline.html)，然后执行下列指令：
 
-## Running Locally
-
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
-
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
+```
+$ git clone git@github.com:leancloud/node-js-getting-started.git
 $ cd node-js-getting-started
-$ npm install
-$ npm start
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
+安装依赖：
 
 ```
-$ heroku create
-$ git push heroku master
-$ heroku open
+npm install
 ```
 
-## Documentation
+关联应用：
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+```
+avoscloud add <origin> <appId>
+```
 
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+这里的 appId 填上你在 LeanCloud 上创建的某一应用的 appId 即可。origin 则有点像 Git 里的 remote 名称。
+
+启动项目：
+
+```
+avoscloud
+```
+
+应用即可启动运行：[localhost:3000](http://localhost:3000)
+
+## 部署到 LeanEngine
+
+
+部署到测试环境：
+```
+avoscloud deploy
+```
+
+部署到生产环境：
+```
+avoscloud publish
+```
+
+## 相关文档
+
+* [LeanEngine 指南](https://leancloud.cn/docs/leanengine_guide-node.html)
+* [JavaScript 指南](https://leancloud.cn/docs/js_guide.html)
+* [JavaScript SDK API](https://leancloud.cn/api-docs/javascript/index.html)
+* [命令行工具详解](https://leancloud.cn/docs/cloud_code_commandline.html)
+* [LeanEngine FAQ](https://leancloud.cn/docs/cloud_code_faq.html)
